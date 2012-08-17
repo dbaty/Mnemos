@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+  <title tal:content="api.page_title"></title>
+  <link rel="stylesheet" type="text/css" href="${api.static_url('static/css/main.css')}"/>
+  <script type="text/javascript" src="${api.static_url('deform:static/scripts/jquery-1.4.2.min.js')}"></script>
+  <script type="text/javascript" src="${api.static_url('deform:static/scripts/jquery-ui-1.8.11.custom.min.js')}"></script>
+  <metal:head metal:define-slot="head"></metal:head>
+</head>
+
+<body i18n:domain="mnemos">
+
+<ol id="header">
+  <li>
+    <a href="${api.route_url('index')}" i18n:translate="">Index</a>
+  </li>
+  <li>
+    <a href="${api.route_url('birthdays')}" i18n:translate="">Birthdays</a>
+  </li>
+  <li>
+    <a href="${api.route_url('map')}" i18n:translate="">Map</a>
+  </li>
+  <li>
+    <a href="${api.route_url('add')}" i18n:translate="">Add new contact</a>
+  </li>
+  <li>
+    <a href="${api.route_url('export')}" i18n:translate="">Export</a>
+  </li>
+  <li class="last">
+    <form action="#" method="post">
+      <input type="text" id="live-search" name="live-search"
+             value="Type in to start searching..."
+             i18n:attributes="value"/>
+    </form>
+  </li>
+</ol>
+
+<div id="content">
+  <div class="notification-success"
+       tal:repeat="notification api.notifications['success']"
+       tal:content="notification"/>
+  <div class="notification-error"
+       tal:repeat="notification api.notifications['error']"
+       tal:content="notification"/>
+  <metal:content metal:define-slot="content"></metal:content>
+</div>
+
+<script src="${api.static_url('static/js/utils.js')}"></script>
+<script type="text/javascript">
+  $(function () {
+    initLiveSearch();
+    $('#live-search').bind('focus', null, function() {
+      this.value= '';
+    });
+  });
+</script>
+<metal:late-scripts metal:define-slot="late-scripts"/>
+
+</body>
+</html>

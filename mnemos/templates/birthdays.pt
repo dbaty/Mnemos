@@ -1,0 +1,34 @@
+<metal:master metal:use-macro="api.layout">
+<metal:content metal:fill-slot="content">
+
+<ol class="panel-menu">
+  <li tal:repeat="(i, label) tuple(enumerate(months, 1)) +
+                             (('unknown', '?'), )">
+    <a tal:condition="by_month[i]"
+       href="#"
+       onclick="javascript: showPanel('${i}')"
+       tal:content="label"/>
+    <span tal:condition="not by_month[i]"
+          tal:content="label"/>
+  </li>
+</ol>
+
+<ol tal:repeat="i tuple(range(1, 1 + len(months))) + ('unknown', )"
+     id="panel-${i}"
+     class="panel">
+  <li tal:repeat="contact by_month.get(i, ())">
+    <a href="${contact['url']}"><span tal:replace="contact['name']"/>
+      <span class="birthdate" tal:content="contact['birthdate']"/></a>
+  </li>
+</ol>
+
+</metal:content>
+
+<metal:late-scripts metal:fill-slot="late-scripts">
+  <script>
+    var current_panel = undefined;
+    showPanel('1');
+  </script>
+</metal:late-scripts>
+
+</metal:master>

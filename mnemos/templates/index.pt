@@ -1,0 +1,33 @@
+<metal:master metal:use-macro="api.layout">
+<metal:content metal:fill-slot="content">
+
+<ol class="panel-menu">
+  <li tal:repeat="letter alphabet">
+    <a tal:condition="letter in contacts"
+       href="#"
+       onclick="javascript: showPanel('${letter}')"
+       tal:content="letter"/>
+    <span tal:condition="letter not in contacts"
+          tal:content="letter"/>
+  </li>
+</ol>
+
+<ol tal:repeat="letter alphabet"
+     id="panel-${letter}"
+     class="panel">
+  <li tal:repeat="contact contacts.get(letter, ())">
+    <a href="${api.route_url('view', contact_id=contact['_id'])}"
+       tal:content="get_full_name(contact)"></a>
+  </li>
+</ol>
+
+</metal:content>
+
+<metal:late-scripts metal:fill-slot="late-scripts">
+  <script>
+    var current_panel = undefined;
+    showPanel('A');
+  </script>
+</metal:late-scripts>
+
+</metal:master>

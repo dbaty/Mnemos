@@ -1,0 +1,283 @@
+# French translations for Mnemos.
+# Copyright (C) 2012 ORGANIZATION
+# This file is distributed under the same license as the Mnemos project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Mnemos 0.1\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2012-07-12 13:18+0200\n"
+"PO-Revision-Date: 2012-06-01 17:23+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 0.9.6\n"
+
+#: mnemos/forms.py:24
+msgid "E-mail"
+msgstr "Adresse électronique"
+
+#: mnemos/forms.py:28
+msgid "Telephone"
+msgstr "Téléphone"
+
+#: mnemos/forms.py:53
+msgid "Link"
+msgstr "Lien"
+
+#: mnemos/forms.py:58
+msgid "Last name"
+msgstr "Nom"
+
+#: mnemos/forms.py:59
+msgid "First name"
+msgstr "Prénom"
+
+#: mnemos/forms.py:61
+msgid "E-mail addresses"
+msgstr "Adresses électroniques"
+
+#: mnemos/forms.py:64
+msgid "Add e-mail address"
+msgstr "Ajouter une adresse électronique"
+
+#: mnemos/forms.py:66
+msgid "Telephone numbers"
+msgstr "Numéros de téléphone"
+
+#: mnemos/forms.py:69
+msgid "Add telephone number"
+msgstr "Ajouter un numéro de téléphone"
+
+#: mnemos/forms.py:71 mnemos/views.py:233
+msgid "Address"
+msgstr "Adresse"
+
+#: mnemos/forms.py:74
+msgid "Postal code"
+msgstr "Code postal"
+
+#: mnemos/forms.py:75
+msgid "City"
+msgstr "Ville"
+
+#: mnemos/forms.py:76
+msgid "Country"
+msgstr "Pays"
+
+#: mnemos/forms.py:77
+msgid "Door code"
+msgstr "Code de la porte"
+
+#: mnemos/forms.py:80
+msgid "Coordinates"
+msgstr "Coordonnées géographiques"
+
+#: mnemos/forms.py:81
+msgid ""
+"Coordinates will be automatically filled. You should not have to provide "
+"them manually."
+msgstr ""
+"Les coordonnées géographiques sont calculées automatiquement. Vous ne "
+"devriez pas avoir à les fournir manuellement."
+
+#: mnemos/forms.py:85
+msgid "Birth day"
+msgstr "Jour de naissance"
+
+#: mnemos/forms.py:88
+msgid "Birth month"
+msgstr "Mois de naissance"
+
+#: mnemos/forms.py:91
+msgid "Birth year"
+msgstr "Année de naissance"
+
+#: mnemos/forms.py:94
+msgid "Notes"
+msgstr "Notes"
+
+#: mnemos/forms.py:98
+msgid "Links"
+msgstr "Liens"
+
+#: mnemos/forms.py:101
+msgid "Add link"
+msgstr "Ajouter un lien"
+
+#: mnemos/forms.py:107
+msgid "Add"
+msgstr "Ajouter"
+
+#: mnemos/forms.py:115
+msgid "Save changes"
+msgstr "Sauvegarder"
+
+#: mnemos/utils.py:12
+msgid "January"
+msgstr "Janvier"
+
+#: mnemos/utils.py:12
+msgid "February"
+msgstr "Février"
+
+#: mnemos/utils.py:12
+msgid "March"
+msgstr "Mars"
+
+#: mnemos/utils.py:12
+msgid "April"
+msgstr "Avril"
+
+#: mnemos/utils.py:12 mnemos/utils.py:15
+msgid "May"
+msgstr "Mai"
+
+#: mnemos/utils.py:13
+msgid "June"
+msgstr "Juin"
+
+#: mnemos/utils.py:13
+msgid "July"
+msgstr "Juillet"
+
+#: mnemos/utils.py:13
+msgid "August"
+msgstr "Août"
+
+#: mnemos/utils.py:13
+msgid "September"
+msgstr "Septembre"
+
+#: mnemos/utils.py:13
+msgid "October"
+msgstr "Octobre"
+
+#: mnemos/utils.py:14
+msgid "November"
+msgstr "Novembre"
+
+#: mnemos/utils.py:14
+msgid "December"
+msgstr "Décembre"
+
+#: mnemos/utils.py:15
+msgid "Jan"
+msgstr "Jan"
+
+#: mnemos/utils.py:15
+msgid "Feb"
+msgstr "Fév"
+
+#: mnemos/utils.py:15
+msgid "Mar"
+msgstr "Mar"
+
+#: mnemos/utils.py:15
+msgid "Apr"
+msgstr "Avr"
+
+#: mnemos/utils.py:15
+msgid "Jun"
+msgstr "Juin"
+
+#: mnemos/utils.py:16
+msgid "Jul"
+msgstr "Juil"
+
+#: mnemos/utils.py:16
+msgid "Aug"
+msgstr "Août"
+
+#: mnemos/utils.py:16
+msgid "Sep"
+msgstr "Sep"
+
+#: mnemos/utils.py:16
+msgid "Oct"
+msgstr "Oct"
+
+#: mnemos/utils.py:16
+msgid "Nov"
+msgstr "Nov"
+
+#: mnemos/utils.py:16
+msgid "Dec"
+msgstr "Déc"
+
+#: mnemos/views.py:47 mnemos/templates/layout.pt:27
+msgid "Add new contact"
+msgstr "Ajouter un contact"
+
+#: mnemos/views.py:132
+msgid "Your changes have been saved."
+msgstr "Vos modifications ont été prises en compte."
+
+#: mnemos/views.py:148
+msgid "The contact has been removed."
+msgstr "Le contact a été supprimé."
+
+#: mnemos/views.py:181 mnemos/templates/layout.pt:21
+msgid "Birthdays"
+msgstr "Anniversaires"
+
+#: mnemos/views.py:201
+msgid "zoom in"
+msgstr "zoomer"
+
+#: mnemos/views.py:232
+msgid "Name"
+msgstr "Nom"
+
+#: mnemos/views.py:234 mnemos/templates/view.pt:59
+msgid "Birthdate"
+msgstr "Date de naissance"
+
+#: mnemos/templates/export.pt:9
+msgid "Export:"
+msgstr "Exporter :"
+
+#: mnemos/templates/export.pt:14
+msgid "everything"
+msgstr "tout"
+
+#: mnemos/templates/export.pt:20
+msgid "only the following data:"
+msgstr "seulement les données suivantes :"
+
+#: mnemos/templates/export.pt:35 mnemos/templates/layout.pt:30
+msgid "Export"
+msgstr "Exporter"
+
+#: mnemos/templates/layout.pt:18
+msgid "Index"
+msgstr "Index"
+
+#: mnemos/templates/layout.pt:24
+msgid "Map"
+msgstr "Carte"
+
+#: mnemos/templates/layout.pt:34
+msgid "Type in to start searching..."
+msgstr "Commencez votre recherche ici..."
+
+#: mnemos/templates/view.pt:78
+msgid "Edit"
+msgstr "Modifier"
+
+#: mnemos/templates/view.pt:81
+msgid ""
+"return window.confirm('Are you sure that you want to remove this contact "
+"from your directory?')"
+msgstr ""
+"return window.confirm('Êtes-vous certain de vouloir supprimer ce contact "
+"de votre carnet d\'adresses ?')"
+
+#: mnemos/templates/view.pt:81
+msgid "Remove"
+msgstr "Supprimer"
+

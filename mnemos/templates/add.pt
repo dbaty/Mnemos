@@ -1,0 +1,11 @@
+<metal:master metal:use-macro="api.layout">
+<metal:head metal:fill-slot="head">
+  <script type="text/javascript"
+          src="${api.static_url('deform:static/scripts/deform.js')}"></script>
+</metal:head>
+<metal:content metal:fill-slot="content">
+
+<form tal:replace="structure form"/>
+
+</metal:content>
+</metal:master>

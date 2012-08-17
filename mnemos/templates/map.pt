@@ -1,0 +1,21 @@
+<metal:master metal:use-macro="api.layout">
+<metal:head metal:fill-slot="head">
+  <link rel="stylesheet" href="${api.static_url('static/css/leaflet.css')}"/>
+</metal:head>
+<metal:content metal:fill-slot="content">
+
+  <div id="map"></div>
+
+</metal:content>
+<metal:late-scripts metal:fill-slot="late-scripts">
+  <script>
+    var $map = $('#map');
+    $map.css('height', $(window).height() - $map.offset()['top'] - 10);
+  </script>
+  <script src="${api.static_url('static/js/leaflet.js')}"></script>
+  <script tal:content="leaflet_api_key"/>
+  <script>
+    $(initMap());
+  </script>
+</metal:late-scripts>
+</metal:master>

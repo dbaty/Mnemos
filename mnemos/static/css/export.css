@@ -1,0 +1,66 @@
+body,
+h1,
+div,
+dl, dd, dt {
+    margin: 0;
+    padding: 0;
+}
+
+/* FIXME: find a good-looking print font */
+* {
+    font-family: "Lucida Grande", Arial, sans-serif;
+}
+
+body {
+    background-color: white;
+    color: black;
+    font-size: 100%; /* 16px */
+    margin: 1em;
+}
+
+h1 {
+    page-break-before: always;
+    text-align: center;
+    padding:  1em 0;
+}
+
+h1.first {
+    page-break-before: auto;
+}
+
+h1:before {
+    padding-right: 0.5em;
+    color: #eee;
+    content: "-";
+}
+
+h1:after {
+    padding-left: 0.5em;
+    color: #eee;
+    content: "-";
+}
+
+dd {
+    margin-bottom: 1em;
+}
+
+.name {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.birthdate {
+    margin-left: 1em;
+    color: #666;
+    font-size: 0.9em;
+}
+
+.link {
+    color: #666;
+    margin-left: 1em;
+}
+
+.link:before {
+    content: '\2192'; /* right-pointing arrow */
+    padding-right: 0.5em;
+}

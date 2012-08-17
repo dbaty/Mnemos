@@ -1,0 +1,378 @@
+body, h1, h2, h3
+p, div, ul, ol, li,
+table, tr, th, td,
+dl, dd, dt,
+form, fieldset, input, textarea, button
+img {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+* {
+    font-family: "Lucida Grande", Arial, sans-serif;
+}
+
+body {
+    background-color: #fdf6d9;
+    color: black;
+    font-size: 100%; /* 16px */
+}
+
+a {
+    text-decoration: none;
+    color: #3333ff;
+}
+
+a img {
+    border: 0;
+}
+
+#header {
+    list-style-type: none;
+    background-color: #e3edf7;
+    border-bottom: 1px solid black;
+    margin-bottom: 1em;
+    padding-left: 0.5em;
+    font-size: 0.8em;
+}
+
+#header li {
+    display: inline-block;
+    padding: 0.5em 0 0.5em 1em;
+}
+
+#header li:after {
+    content: "\00b7";
+    margin-left: 1em;
+}
+
+#header li.last:after {
+    content: '';
+}
+
+#header li img {
+    vertical-align: middle;
+}
+
+#header li a {
+    color: black;
+    text-decoration: none;
+    padding-bottom: 0.1em;
+    border-bottom: 1px solid #aaaaaa;
+}
+
+#header form {
+    display: inline;
+}
+
+#header input[type="text"] {
+    padding: 0.5em;
+}
+
+.ui-autocomplete {
+    list-style: none;
+    width: 15em;
+    /* jQuery UI sets the z-index to 1 on the HTML tag itself. 
+       It must be higher than this to appear over the map. */
+    z-index: 15 !important;
+}
+
+.ui-autocomplete li {
+    background-color: #e3edf7;
+    padding: 0.5em;
+    border-bottom: 1px solid #dddddd;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.ui-autocomplete li:first-child {
+    border-top: 1px solid black;
+}
+
+.ui-autocomplete li:last-child {
+    border-bottom: 1px solid black;
+}
+
+.ui-autocomplete li:hover {
+    background-color: #d2dce6;
+}
+
+.ui-autocomplete a {
+    color: black;
+    text-decoration: none;
+}
+
+#content {
+    width: 45em;
+    margin: 0 auto;
+}
+
+.notification-success, .notification-error {
+    border-width: 1px 1px 1px 0.5em;
+    border-style: solid;
+    padding: 0.5em;
+    margin-bottom: 1em;
+}
+
+.notification-success {
+    border-color: #007d39;
+    background-color: #f4fffa;
+}
+
+.notification-error {
+    color: #cc0000;
+    border-color: #cc0000;
+    background-color: #ffeeee;
+}
+
+#live-search {
+    color: #ccc;
+}
+
+#live-search:focus {
+    color: black;
+}
+/**********************************************************/
+
+
+/**********************************************************/
+/* "Panels" and "panel menu" (used on "/" and "/birthdays") */
+.panel-menu {
+    font-size: 0.9em;
+    margin-bottom: 1em;
+    list-style: none;
+    text-align: center;
+}
+
+.panel-menu li {
+    display: inline;
+    padding-right: 0.8em;
+    color: #aaaaaa;
+}
+
+.panel-menu li:last-child {
+    padding-right: 0;
+}
+
+.panel-menu li a {
+    color: #b66b31;
+    text-decoration: none;
+}
+
+.panel {
+    list-style: none;
+    display: none;
+}
+
+.panel li {
+    border-bottom: 1px solid #dddddd;
+}
+
+.panel a {
+    padding: 0.5em 0;
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding-left: 1em;
+}
+
+.panel .birthdate {
+    font-size: 0.8em;
+    color: #666;
+}
+
+.panel li a:hover {
+    background-color: #ece5c8;
+}
+/**********************************************************/
+
+
+/**********************************************************/
+/* Forms */
+form.ninja {
+    display: inline;
+}
+
+fieldset {
+    border: 0;
+}
+
+#edit-form {
+    display: none;
+}
+
+form ul {
+    list-style: none;
+}
+
+form li {
+    padding-left: 1em;
+    margin-bottom: 0.5em;
+}
+
+form li.errorLi {
+    display: none;
+}
+
+form input, form textarea {
+    font-size: 1em;
+    padding: 0.2em;
+}
+
+form textarea {
+    width: 25em;
+}
+
+form li.error {
+    background-color: #ffaaaa;
+    padding: 0.5em 0 0.5em 1em;
+}
+
+form li p.error {
+    background: url('../img/error.png') no-repeat;
+    padding-left: 20px;
+    margin: 0.5em 0 0 0;
+}
+
+.field {
+    clear: both;
+    margin-bottom: 1em;
+}
+
+label {
+    display: inline-block;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    width: 12em;
+}
+
+.deformClosebutton,
+.deformClosebuttonActive {
+    cursor: pointer;
+}
+
+.deformClosebutton:before, 
+.deformClosebuttonActive:before {
+    content: '\2717';
+    color: red;
+    margin-right: 2px;
+}
+
+.buttons button {
+    font-size: 1em;
+    border: 1px solid black;
+    padding: 0.5em;
+    background-color: #b9b295;
+    color: black;
+    cursor: pointer;
+}
+
+.buttons button.warning {
+    background-color: #fd9b00;
+}
+
+.buttons a {
+    font-size: 0.8em;
+    color: black;
+    text-decoration: none;
+    padding-bottom: 0.1em;
+    border-bottom: 1px solid black;
+}
+/**********************************************************/
+
+
+
+/**********************************************************/
+/* Export form */
+.export p {
+    margin-top: 0;
+    float: left;
+}
+.export ul {
+    margin-top: 0;
+    float: left;
+}
+.export ul li {
+    margin-bottom: 0;
+}
+.export ul ul {
+    margin-left: 1em;
+}
+.export label {
+    width: 100%;
+    font-weight: normal;
+}
+.export .submit {
+    clear: both;
+}
+/**********************************************************/
+
+
+
+/**********************************************************/
+/* View page */
+h1 {
+    text-align: center;
+    font-size: 1.6em;
+    margin-bottom: 0.5em;
+}
+
+#view-sheet {
+    list-style: none;
+}
+
+#view-sheet .label {
+    float: left;
+    color: #999999;
+    font-weight: bold;
+    padding-right: 1em;
+    text-align: right;
+    width: 10em;
+}
+
+#view-sheet .label {
+    float: left;
+}
+
+#view-sheet li {
+    clear: both;
+}
+
+#view-sheet .data {
+    float: left;
+}
+
+#view-sheet .repeatable-field {
+    list-style: none;
+}
+
+#view-sheet li {
+    padding-top: 0.5em;
+}
+
+#view-sheet li:first-child {
+    padding-top: 0;
+}
+
+#view-sheet .repeatable-field li {
+    padding-top: 0;
+    padding-bottom: 0.5em;
+}
+
+#view-sheet li.buttons {
+    text-align: center;
+}
+
+
+/**********************************************************/
+/* Map */
+#map {
+    width: 100%;
+    border: 1px solid #ccc;
+    /* height is set dynamically in JavaScript */
+}

@@ -1,0 +1,93 @@
+<metal:master metal:use-macro="api.layout">
+<metal:head metal:fill-slot="head">
+  <script type="text/javascript" src="${api.static_url('deform:static/scripts/deform.js')}"></script>
+  <script type="text/javascript">
+    function toggle_edit(show) {
+      $('#view-sheet').toggle(!show);
+      $('#edit-form').toggle(show);
+    }
+  </script>
+</metal:head>
+<metal:content metal:fill-slot="content">
+
+<h1 tal:content="get_full_name(contact)"></h1>
+
+<ol id="view-sheet" i18n:domain="mnemos">
+  <li>
+    <div class="label" tal:content="label_of('emails')"/>
+    <div class="data">
+      <ol class="repeatable-field">
+        <li tal:repeat="email contact['emails']"
+            tal:attributes="class repeat['email'].end and 'last' or ''">
+          <a href="mailto:${email}"
+             tal:content="email"/>
+          </li>
+      </ol>
+    </div>
+  </li>
+  <li>
+    <div class="label" tal:content="label_of('telephones')"/>
+    <div class="data">
+      <ol class="repeatable-field">
+        <li tal:repeat="tel contact['telephones']"
+            tal:attributes="class repeat['tel'].end and 'last' or ''"
+            tal:content="tel"/>
+      </ol>
+    </div>
+  </li>
+  <li>
+    <div class="label" tal:content="label_of('address')"/>
+    <div class="data">
+      <div tal:content="structure contact['address'].replace('\n', '<br/>')"/>
+      <div tal:content="' '.join((contact['postal_code'], contact['city']))"/>
+      <div tal:content="contact['country']"/>
+    </div>
+  </li>
+  <li>
+    <div class="label" tal:content="label_of('door_code')"/>
+    <div class="data" tal:content="contact['door_code']"/>
+  </li>
+  <li>
+    <div class="label" tal:content="label_of('coord')"/>
+    <div class="data">
+      <a tal:condition="contact['coord']"
+         tal:attributes="href api.route_url('map', _anchor='lng=%s&amp;lat=%s' % (contact['coord'][0], contact['coord'][1]))"
+         tal:content="', '.join(map(str, contact['coord']))"/>
+    </div>
+  </li>
+  <li>
+    <div class="label" i18n:translate="">Birthdate</div>
+    <div class="data" tal:content="birthdate"/>
+  </li>
+  <li>
+    <div class="label" tal:content="label_of('notes')"/>
+    <div class="data" tal:content="contact['notes']"/>
+  </li>
+  <li>
+    <div class="label" tal:content="label_of('links')"/>
+    <div class="data">
+      <ol class="repeatable-field">
+        <li tal:repeat="link links">
+          <a tal:content="get_full_name(link)"
+             href="${api.route_url('view', contact_id=link['_id'])}"/>
+        </li>
+      </ol>
+    </div>
+  </li>
+  <li class="buttons">
+    <button onclick="toggle_edit(true)" i18n:translate="">Edit</button> |
+    <form class="ninja" action="${api.route_url('remove', contact_id=contact['_id'])}" method="post">
+      <input type="hidden" name="csrf_token" value="${api.request.session.get_csrf_token()}"/>
+      <button class="warning" onclick="return window.confirm('Are you sure that you want to remove this contact from your directory?')"
+              i18n:translate=""
+              i18n:attributes="onclick">Remove</button>
+    </form>
+  </li>
+</ol>
+
+<form tal:replace="structure form"/>
+
+<script tal:condition="edit_error">toggle_edit(true);</script>
+
+</metal:content>
+</metal:master>

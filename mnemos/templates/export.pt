@@ -1,0 +1,44 @@
+<metal:master metal:use-macro="api.layout">
+<metal:content metal:fill-slot="content">
+
+<!--!
+  I don't know why, but the 'i18n:domain' attribute is required to
+  translate the content of the 'p' tag as well as the first two
+  'span's.
+-->
+<form action="${api.route_url('export')}" method="post"
+      class="export"
+      i18n:domain="mnemos">
+<p i18n:translate="">Export:</p>
+<ul>
+  <li>
+    <label>
+      <input type="radio" name="mode" value="all"/>
+      <span i18n:translate="" tal:omit-tag="">everything</span>
+    </label>
+  </li>
+  <li>
+    <label>
+      <input type="radio" name="mode" value="partial"/>
+      <span i18n:translate="" tal:omit-tag="">only the following data:</span>
+    </label>
+    <ul>
+      <li tal:repeat="attr attributes">
+        <label>
+          <input type="checkbox" name="attributes" value="${attr['name']}"
+                 tal:attributes="checked attr['name'] in mandatory;
+                                 disabled attr['name'] in mandatory"/>
+          <span tal:replace="attr['label']"/>
+        </label>
+      </li>
+    </ul>
+  </li>
+</ul>
+<div class="submit">
+  <input type="submit" value="Export" i18n:attributes="value"/>
+</div>
+</form>
+
+
+</metal:content>
+</metal:master>

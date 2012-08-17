@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+  <title>Mnemos export</title>
+  <link rel="stylesheet" type="text/css" href="${css_url}"/>
+</head>
+
+<body>
+
+<tal:loop tal:repeat="initial sorted(contacts.keys())">
+  <h1 tal:content="initial"
+      tal:attributes="class repeat['initial'].start and 'first'"/>
+  <dl>
+    <tal:contact tal:repeat="contact contacts[initial]">
+      <dt>
+        <span class="name" tal:content="get_full_name(contact)"/>
+        <span tal:define="birthdate 'birthdate' in attributes and
+                                    get_birthdate(contact, request)"
+              tal:condition="birthdate"
+              class="birthdate" tal:content="birthdate"/>
+      </dt>
+      <dd>
+        <tal:if-full-address tal:condition="'full_address' in attributes">
+          <div class="address" tal:content="contact['address']"/>
+          <div class="city" tal:content="' '.join((contact['postal_code'],
+                                                   contact['city']))"/>
+          <div tal:condition="contact['country']"
+               class="country" tal:content="contact['country']"/>
+        </tal:if-full-address>
+        <div tal:condition="contact['door_code']" class="door-code">
+          <span class="label">Door code:</span>
+          <span class="code" tal:content="contact['door_code']"/>
+        </div>
+        <tal:if-telephones tal:condition="'telephones' in attributes">
+          <div tal:repeat="phone contact['telephones']"
+               tal:content="phone"/>
+        </tal:if-telephones>
+        <tal:if-emails tal:condition="'emails' in attributes">
+          <div tal:repeat="email contact['emails']"
+               tal:content="email"/>
+        </tal:if-emails>
+        <div tal:condition="'notes' in attributes"
+             class="notes" tal:content="contact['notes']"/>
+        <tal:if-links tal:condition="'links' in attributes">
+          <div tal:repeat="link links.get(contact['_id'], ())"
+               tal:content="link"
+               class="link"/>
+        </tal:if-links>
+      </dd>
+    </tal:contact>
+  </dl>
+</tal:loop>
+
+</body>
+</html>
